@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rebelarte</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            background: url(images/bg5.png);
+            font-size: 20px;
+        }
+        #container{
+            width: 96%;
+            height: 92%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #info{
+            width: 30%;
+            height: 100%;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        #wrapper{
+            width: 70%;
+            height: 100%;
+            display: inline-block;
+            box-sizing: border-box;
+            vertical-align: top;
+        }
+        header{
+            position: relative;
+            width: 100%;
+            height: 10%;
+            box-sizing: border-box;
+            text-align: right;
+            padding:2%;
+        }
+        #logo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            text-align: left;
+        }
+        #logo img{
+            width: 100%;
+            max-width: 170px;
+        }
+        .iconmenu{
+            color: #666;
+            font-size:1.5em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .iconmenu:hover{
+            color: #282828;
+        }
+        #wrapperminiabout{
+            position: relative;
+            width: 100%;
+            height: 90%;
+            background: url(images/foto2.jpg) 60% 80%;
+            background-size: cover;
+            box-sizing: border-box;
+        }
+        #menu{
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            box-sizing: border-box;
+        }
+        
+        #menu nav ul{
+            list-style: none;
+            width: 100%;
+            position: absolute;
+            top:50%;
+            transform: translate(0,-50%);
+        }
+        #menu nav ul li{
+            font-family:  "Roboto Condensed";
+            color: #FFF;
+            display: block;
+            font-size: 1.5em;
+            text-transform:uppercase;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        #menu nav ul li:hover{
+            letter-spacing: 1px;
+        }
+        #menu nav ul li span{
+            margin-right: 5px;
+            font-size: .8em;
+        }
+    </style>
+    <link href="css/fakeLoader.css" rel="stylesheet" type="text/css"/>
+    <link href="css/icons.css" rel="stylesheet" type="text/css"/>
+    
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/fakeLoader.min.js"></script>
+    
+    <script>
+       
+        $(document).on("ready",function(){
+                       
+            $("#fakeLoader").fakeLoader({
+                timeToHide:1200, //Time in milliseconds for fakeLoader disappear
+                zIndex:"999",//Default zIndex
+                spinner:"spinner4",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+                bgColor:"#f1f1f1"
+            });
+            
+            $("#vermenu").on("click",function(){
+                $(this).toggleClass("icon-menu4");
+                $("#menu").fadeToggle();
+            });
+            
+            
+        });
+    </script>
+</head>
+
+<body>
+    <div id="fakeLoader"></div>
+    <div id="container">
+        <div id="info">
+            <header>
+               <div id="logo"><img src="images/logo.png" alt=""/></div><span class="icon-menu3 iconmenu" id="vermenu"></span>
+            </header>
+            <div id="wrapperminiabout">
+                
+                <div id="menu">
+                    <nav>
+                        <ul>
+                            <li><span class="icon-home"></span>Home</li>
+                            <li><span class="icon-happy"></span>Quien Soy?</li>
+                            <li><span class="icon-folder-open"></span>Portafolio</li>
+                            <li><span class="icon-book"></span>Blog</li>
+                            <li><span class="icon-mail2"></span>Contacto</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div><div id="wrapper">
+            
+        </div>
+    </div>
+</body>
+</html>
